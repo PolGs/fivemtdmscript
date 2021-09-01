@@ -1,5 +1,23 @@
+local spawnPos = vector3(686.245, 577.950, 130.461)
+
 RegisterNetEvent("azul")
 AddEventHandler("azul", function()
+    exports.spawnmanager:setAutoSpawnCallback(function()
+    exports.spawnmanager:spawnPlayer({
+            x = spawnPos.x,
+            y = spawnPos.y,
+            z = spawnPos.z,
+            model = 'mp_m_freemode_01'
+        }, function()
+            TriggerEvent('chat:addMessage', {
+                args = { 'Welcome to the party!~' }
+            })
+        end)
+    end)
+
+    exports.spawnmanager:setAutoSpawn(true)
+    exports.spawnmanager:forceRespawn()
+    Citizen.Wait(1000)
     local ped = GetPlayerPed(PlayerId())
     local weapon = GetHashKey("WEAPON_COMBATPISTOL")
     GiveWeaponToPed(ped, weapon, 230, false, false)
@@ -19,8 +37,26 @@ AddEventHandler("azul", function()
     
 end)
 
+
+
 RegisterNetEvent("rojo")
 AddEventHandler("rojo", function()
+    exports.spawnmanager:setAutoSpawnCallback(function()
+    exports.spawnmanager:spawnPlayer({
+            x = spawnPos.x,
+            y = spawnPos.y,
+            z = spawnPos.z,
+            model = 'mp_m_freemode_01'
+        }, function()
+            TriggerEvent('chat:addMessage', {
+                args = { 'Welcome to the party!~' }
+            })
+        end)
+    end)
+
+    exports.spawnmanager:setAutoSpawn(true)
+    exports.spawnmanager:forceRespawn()
+    Citizen.Wait(1000)
     local ped = GetPlayerPed(PlayerId())
     local weapon = GetHashKey("WEAPON_COMBATPISTOL")
     GiveWeaponToPed(ped, weapon, 230, false, false)
@@ -40,23 +76,4 @@ AddEventHandler("rojo", function()
     
 end)
 
-local spawnPos = vector3(686.245, 577.950, 130.461)
 
-RegisterNetEvent("ped")
-AddEventHandler("ped",function()
-	exports.spawnmanager:setAutoSpawnCallback(function()
-        exports.spawnmanager:spawnPlayer({
-            x = spawnPos.x,
-            y = spawnPos.y,
-            z = spawnPos.z,
-            model = 'mp_m_freemode_01'
-        }, function()
-            TriggerEvent('chat:addMessage', {
-                args = { 'Welcome to the party!~' }
-            })
-        end)
-    end)
-
-    exports.spawnmanager:setAutoSpawn(true)
-    exports.spawnmanager:forceRespawn()
-end)
