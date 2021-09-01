@@ -1,0 +1,10 @@
+RegisterCommand("rojo", function(source, args, string)
+    TriggerClientEvent("rojo", source)
+end, false)
+RegisterCommand("azul", function(source, args, string)
+    TriggerClientEvent("azul", source)
+end, false)
+
+RegisterCommand("ped", function(source,args,string)
+	TriggerClientEvent("ped", source)
+end, false)
